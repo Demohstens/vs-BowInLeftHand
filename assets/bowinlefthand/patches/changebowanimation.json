@@ -1,0 +1,27 @@
+[
+  {
+    "file": "game:itemtypes/tool/bow",
+    "op": "replace",
+    "path": "/attributes/aimAnimationByType/*",
+    "value": "bowaimfixed"
+  },
+  {
+    "file": "game:itemtypes/tool/bow",
+    "op": "replace",
+    "path": "/attributes/aimAnimationByType/bow-crude",
+    "value": "bowaimcrudefixed"
+  },
+
+  {
+    "file": "game:itemtypes/tool/bow",
+    "op": "replace",
+    "path": "/attributes/aimAnimationByType/bow-long",
+    "value": "bowaimlongfixed"
+  },
+  {
+    "file": "game:itemtypes/tool/bow",
+    "op": "replace",
+    "path": "/attributes/aimAnimationByType/bow-recurve",
+    "value": "bowaimrecurvefixed"
+  }
+]

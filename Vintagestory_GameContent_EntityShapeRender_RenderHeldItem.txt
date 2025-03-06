@@ -1,0 +1,133 @@
+// Token: 0x06000236 RID: 566 RVA: 0x000131EC File Offset: 0x000113EC
+.method family hidebysig newslot virtual 
+	instance void RenderHeldItem (
+		float32 dt,
+		bool isShadowPass,
+		bool right
+	) cil managed 
+{
+	// Header Size: 12 bytes
+	// Code Size: 160 (0xA0) bytes
+	// LocalVarSig Token: 0x1100009E RID: 158
+	.maxstack 6
+	.locals init (
+		[0] class [VintagestoryAPI]Vintagestory.API.Common.ItemSlot slot,
+		[1] class [VintagestoryAPI]Vintagestory.API.Common.ItemStack stack,
+		[2] class [VintagestoryAPI]Vintagestory.API.Common.AttachmentPointAndPose apap,
+		[3] class [VintagestoryAPI]Vintagestory.API.Client.ItemRenderInfo renderInfo
+	)
+
+	/* (436,13)-(436,90) C:\Users\Tyron\Documents\vintagestory\game\VSEssentials\EntityRenderer\EntityShapeRenderer.cs */
+	/* 0x000113F8 05           */ IL_0000: ldarg.3
+	/* 0x000113F9 2D14         */ IL_0001: brtrue.s  IL_0017
+
+	/* 0x000113FB 02           */ IL_0003: ldarg.0
+	/* 0x000113FC 7BF3010004   */ IL_0004: ldfld     class [VintagestoryAPI]Vintagestory.API.Common.EntityAgent Vintagestory.GameContent.EntityShapeRenderer::eagent
+	/* 0x00011401 25           */ IL_0009: dup
+	/* 0x00011402 2D04         */ IL_000A: brtrue.s  IL_0010
+
+	/* 0x00011404 26           */ IL_000C: pop
+	/* 0x00011405 14           */ IL_000D: ldnull
+	/* 0x00011406 2B19         */ IL_000E: br.s      IL_0029
+
+	/* 0x00011408 6F9005000A   */ IL_0010: callvirt  instance class [VintagestoryAPI]Vintagestory.API.Common.ItemSlot [VintagestoryAPI]Vintagestory.API.Common.EntityAgent::get_LeftHandItemSlot()
+	/* 0x0001140D 2B12         */ IL_0015: br.s      IL_0029
+
+	/* 0x0001140F 02           */ IL_0017: ldarg.0
+	/* 0x00011410 7BF3010004   */ IL_0018: ldfld     class [VintagestoryAPI]Vintagestory.API.Common.EntityAgent Vintagestory.GameContent.EntityShapeRenderer::eagent
+	/* 0x00011415 25           */ IL_001D: dup
+	/* 0x00011416 2D04         */ IL_001E: brtrue.s  IL_0024
+
+	/* 0x00011418 26           */ IL_0020: pop
+	/* 0x00011419 14           */ IL_0021: ldnull
+	/* 0x0001141A 2B05         */ IL_0022: br.s      IL_0029
+
+	/* 0x0001141C 6F8F05000A   */ IL_0024: callvirt  instance class [VintagestoryAPI]Vintagestory.API.Common.ItemSlot [VintagestoryAPI]Vintagestory.API.Common.EntityAgent::get_RightHandItemSlot()
+
+	/* 0x00011421 0A           */ IL_0029: stloc.0
+	/* (437,13)-(437,47) C:\Users\Tyron\Documents\vintagestory\game\VSEssentials\EntityRenderer\EntityShapeRenderer.cs */
+	/* 0x00011422 06           */ IL_002A: ldloc.0
+	/* 0x00011423 2D03         */ IL_002B: brtrue.s  IL_0030
+
+	/* 0x00011425 14           */ IL_002D: ldnull
+	/* 0x00011426 2B06         */ IL_002E: br.s      IL_0036
+
+	/* 0x00011428 06           */ IL_0030: ldloc.0
+	/* 0x00011429 28DE03000A   */ IL_0031: call      instance class [VintagestoryAPI]Vintagestory.API.Common.ItemStack [VintagestoryAPI]Vintagestory.API.Common.ItemSlot::get_Itemstack()
+
+	/* 0x0001142E 0B           */ IL_0036: stloc.1
+	/* (438,13)-(438,56) C:\Users\Tyron\Documents\vintagestory\game\VSEssentials\EntityRenderer\EntityShapeRenderer.cs */
+	/* 0x0001142F 07           */ IL_0037: ldloc.1
+	/* 0x00011430 2C08         */ IL_0038: brfalse.s IL_0042
+
+	/* 0x00011432 06           */ IL_003A: ldloc.0
+	/* 0x00011433 75E5010001   */ IL_003B: isinst    [VintagestoryAPI]Vintagestory.API.Common.ItemSlotSkill
+	/* 0x00011438 2C01         */ IL_0040: brfalse.s IL_0043
+
+	/* (438,57)-(438,64) C:\Users\Tyron\Documents\vintagestory\game\VSEssentials\EntityRenderer\EntityShapeRenderer.cs */
+	/* 0x0001143A 2A           */ IL_0042: ret
+
+	/* (440,13)-(440,130) C:\Users\Tyron\Documents\vintagestory\game\VSEssentials\EntityRenderer\EntityShapeRenderer.cs */
+	/* 0x0001143B 02           */ IL_0043: ldarg.0
+	/* 0x0001143C 7BFA04000A   */ IL_0044: ldfld     class [VintagestoryAPI]Vintagestory.API.Common.Entities.Entity [VintagestoryAPI]Vintagestory.API.Common.Entities.EntityRenderer::entity
+	/* 0x00011441 6F7301000A   */ IL_0049: callvirt  instance class [VintagestoryAPI]Vintagestory.API.Common.IAnimationManager [VintagestoryAPI]Vintagestory.API.Common.Entities.Entity::get_AnimManager()
+	/* 0x00011446 25           */ IL_004E: dup
+	/* 0x00011447 2D04         */ IL_004F: brtrue.s  IL_0055
+
+	/* 0x00011449 26           */ IL_0051: pop
+	/* 0x0001144A 14           */ IL_0052: ldnull
+	/* 0x0001144B 2B20         */ IL_0053: br.s      IL_0075
+
+	/* 0x0001144D 6F9205000A   */ IL_0055: callvirt  instance class [VintagestoryAPI]Vintagestory.API.Common.IAnimator [VintagestoryAPI]Vintagestory.API.Common.IAnimationManager::get_Animator()
+	/* 0x00011452 25           */ IL_005A: dup
+	/* 0x00011453 2D04         */ IL_005B: brtrue.s  IL_0061
+
+	/* 0x00011455 26           */ IL_005D: pop
+	/* 0x00011456 14           */ IL_005E: ldnull
+	/* 0x00011457 2B14         */ IL_005F: br.s      IL_0075
+
+	/* 0x00011459 05           */ IL_0061: ldarg.3
+	/* 0x0001145A 2D07         */ IL_0062: brtrue.s  IL_006B
+
+	/* 0x0001145C 72E23E0070   */ IL_0064: ldstr     "LeftHand"
+	/* 0x00011461 2B05         */ IL_0069: br.s      IL_0070
+
+	/* 0x00011463 728C400070   */ IL_006B: ldstr     "RightHand"
+
+	/* 0x00011468 6F9305000A   */ IL_0070: callvirt  instance class [VintagestoryAPI]Vintagestory.API.Common.AttachmentPointAndPose [VintagestoryAPI]Vintagestory.API.Common.IAnimator::GetAttachmentPointPose(string)
+
+	/* 0x0001146D 0C           */ IL_0075: stloc.2
+	/* (441,13)-(441,30) C:\Users\Tyron\Documents\vintagestory\game\VSEssentials\EntityRenderer\EntityShapeRenderer.cs */
+	/* 0x0001146E 08           */ IL_0076: ldloc.2
+	/* 0x0001146F 2D01         */ IL_0077: brtrue.s  IL_007A
+
+	/* (441,31)-(441,38) C:\Users\Tyron\Documents\vintagestory\game\VSEssentials\EntityRenderer\EntityShapeRenderer.cs */
+	/* 0x00011471 2A           */ IL_0079: ret
+
+	/* (443,13)-(443,156) C:\Users\Tyron\Documents\vintagestory\game\VSEssentials\EntityRenderer\EntityShapeRenderer.cs */
+	/* 0x00011472 02           */ IL_007A: ldarg.0
+	/* 0x00011473 7BE904000A   */ IL_007B: ldfld     class [VintagestoryAPI]Vintagestory.API.Client.ICoreClientAPI [VintagestoryAPI]Vintagestory.API.Common.Entities.EntityRenderer::capi
+	/* 0x00011478 6FEF04000A   */ IL_0080: callvirt  instance class [VintagestoryAPI]Vintagestory.API.Client.IRenderAPI [VintagestoryAPI]Vintagestory.API.Client.ICoreClientAPI::get_Render()
+	/* 0x0001147D 06           */ IL_0085: ldloc.0
+	/* 0x0001147E 05           */ IL_0086: ldarg.3
+	/* 0x0001147F 2D03         */ IL_0087: brtrue.s  IL_008C
+
+	/* 0x00011481 19           */ IL_0089: ldc.i4.3
+	/* 0x00011482 2B01         */ IL_008A: br.s      IL_008D
+
+	/* 0x00011484 18           */ IL_008C: ldc.i4.2
+
+	/* 0x00011485 03           */ IL_008D: ldarg.1
+	/* 0x00011486 6F2005000A   */ IL_008E: callvirt  instance class [VintagestoryAPI]Vintagestory.API.Client.ItemRenderInfo [VintagestoryAPI]Vintagestory.API.Client.IRenderAPI::GetItemStackRenderInfo(class [VintagestoryAPI]Vintagestory.API.Common.ItemSlot, valuetype [VintagestoryAPI]Vintagestory.API.Client.EnumItemRenderTarget, float32)
+	/* 0x0001148B 0D           */ IL_0093: stloc.3
+	/* (445,13)-(445,67) C:\Users\Tyron\Documents\vintagestory\game\VSEssentials\EntityRenderer\EntityShapeRenderer.cs */
+	/* 0x0001148C 02           */ IL_0094: ldarg.0
+	/* 0x0001148D 03           */ IL_0095: ldarg.1
+	/* 0x0001148E 04           */ IL_0096: ldarg.2
+	/* 0x0001148F 07           */ IL_0097: ldloc.1
+	/* 0x00011490 08           */ IL_0098: ldloc.2
+	/* 0x00011491 09           */ IL_0099: ldloc.3
+	/* 0x00011492 6F37020006   */ IL_009A: callvirt  instance void Vintagestory.GameContent.EntityShapeRenderer::RenderItem(float32, bool, class [VintagestoryAPI]Vintagestory.API.Common.ItemStack, class [VintagestoryAPI]Vintagestory.API.Common.AttachmentPointAndPose, class [VintagestoryAPI]Vintagestory.API.Client.ItemRenderInfo)
+	/* (446,9)-(446,10) C:\Users\Tyron\Documents\vintagestory\game\VSEssentials\EntityRenderer\EntityShapeRenderer.cs */
+	/* 0x00011497 2A           */ IL_009F: ret
+} // end of method EntityShapeRenderer::RenderHeldItem

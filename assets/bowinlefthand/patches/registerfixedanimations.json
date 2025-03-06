@@ -1,0 +1,87 @@
+[
+    {
+        "file": "game:entities/humanoid/player", "op": "add", "path": "/client/animations/-", "value": {
+            code: "bowaimfixed", 
+            animation: "bowaimfixed", 
+            blendMode: "Add",
+            elementWeight: {
+                "UpperArmR": 90,
+                "LowerArmR": 90,
+                "UpperArmL": 90,
+                "LowerArmL": 90,
+                "ItemAnchor": 90
+            },
+            elementBlendMode: {
+                "UpperArmR": "AddAverage",
+                "LowerArmR": "AddAverage",
+                "UpperArmL": "AddAverage",
+                "LowerArmL": "AddAverage",
+                "ItemAnchor": "AddAverage"
+            }
+        }
+    },
+    {
+        "file": "game:entities/humanoid/player", "op": "add", "path": "/client/animations/-", "value": {
+            code: "bowaimcrudefixed", 
+            animation: "bowaimcrudefixed", 
+            blendMode: "Add",
+            elementWeight: {
+                "UpperArmR": 90,
+                "LowerArmR": 90,
+                "UpperArmL": 90,
+                "LowerArmL": 90
+            },
+            elementBlendMode: {
+                "UpperArmR": "AddAverage",
+                "LowerArmR": "AddAverage",
+                "UpperArmL": "AddAverage",
+                "LowerArmL": "AddAverage"
+            }
+        }
+    },
+    {
+        "file": "game:entities/humanoid/player", "op": "add", "path": "/client/animations/-", "value": {
+            code: "bowaimlongfixed", 
+            animation: "bowaimlongfixed", 
+            blendMode: "Add",
+            elementWeight: {
+                "Neck": 90,
+                "Head": 90,
+                "UpperTorso": 90,
+                "UpperArmR": 90,
+                "LowerArmR": 90,
+                "UpperArmL": 90,
+                "LowerArmL": 90,
+                "ItemAnchor": 90
+            },
+            elementBlendMode: {
+                "UpperTorso": "AddAverage",
+                "UpperArmR": "AddAverage",
+                "LowerArmR": "AddAverage",
+                "UpperArmL": "AddAverage",
+                "LowerArmL": "AddAverage",
+            }
+        }
+    },
+    {
+        "file": "game:entities/humanoid/player", "op": "add", "path": "/client/animations/-", "value": {
+            code: "bowaimrecurvefixed", 
+            animation: "bowaimrecurvefixed", 
+            blendMode: "Add",
+            elementWeight: {
+                "UpperArmR": 90,
+                "LowerArmR": 90,
+                "UpperArmL": 90,
+                "LowerArmL": 90,
+                "ItemAnchor": 90
+            },
+            elementBlendMode: {
+                "UpperArmR": "AddAverage",
+                "LowerArmR": "AddAverage",
+                "UpperArmL": "AddAverage",
+                "LowerArmL": "AddAverage",
+                "ItemAnchor": "AddAverage"
+            }
+        }
+    }
+]

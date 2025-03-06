@@ -1,0 +1,808 @@
+[
+    {
+        "file": "game:shapes/entity/humanoid/seraph-faceless",
+        "op": "add",
+        "path": "/animations/-",
+        "value": {
+            "name": "BowAimFixed",
+            "code": "bowaimfixed",
+            "quantityframes": 16,
+            "onActivityStopped": "EaseOut",
+            "onAnimationEnd": "Hold",
+            "keyframes": [
+                {
+                    "frame": 0,
+                    "elements": {
+                        "UpperTorso": {
+                            "offsetX": 0,
+                            "offsetY": 0,
+                            "offsetZ": 0,
+                            "rotationX": 0,
+                            "rotationY": 0,
+                            "rotationZ": 0
+                        },
+                        "Neck": {
+                            "offsetX": 0,
+                            "offsetY": 0,
+                            "offsetZ": 0,
+                            "rotationX": 0,
+                            "rotationY": 0,
+                            "rotationZ": 0
+                        },
+                        "Head": {
+                            "rotationX": 0,
+                            "rotationY": 0,
+                            "rotationZ": 8
+                        },
+                        "UpperArmR": {
+                            "offsetX": 0,
+                            "offsetY": 0,
+                            "offsetZ": 0,
+                            "rotationX": 0,
+                            "rotationY": 0,
+                            "rotationZ": 0
+                        },
+                        "LowerArmR": {
+                            "offsetX": 0,
+                            "offsetY": 0,
+                            "offsetZ": 0,
+                            "rotationX": 0,
+                            "rotationY": 0,
+                            "rotationZ": 0
+                        },
+                        "UpperArmL": {
+                            "offsetX": 1,
+                            "offsetY": 0,
+                            "offsetZ": 0,
+                            "rotationX": 0,
+                            "rotationY": 0,
+                            "rotationZ": 0
+                        },
+                        "LowerArmL": {
+                            "offsetX": 0,
+                            "offsetY": 0,
+                            "offsetZ": 0,
+                            "rotationX": 0,
+                            "rotationY": 0,
+                            "rotationZ": 0
+                        },
+                        "ItemAnchorL": {
+                            "offsetX": 0,
+                            "offsetY": 0,
+                            "offsetZ": 0,
+                            "rotationX": 0,
+                            "rotationY": 0,
+                            "rotationZ": 0
+                        }
+                    }
+                },
+                {
+                    "frame": 6,
+                    "elements": {
+                        "UpperArmR": {
+                            "rotationX": -5,
+                            "rotationY": -11,
+                            "rotationZ": -45
+                        }
+                    }
+                },
+                {
+                    "frame": 10,
+                    "elements": {
+                        "UpperArmR": {
+                            "offsetX": 1.7,
+                            "offsetY": 0,
+                            "offsetZ": 2.5,
+                            "rotationX": 10,
+                            "rotationY": -35,
+                            "rotationZ": -90
+                        },
+                        "UpperArmL": {
+                            "offsetX": 2.4,
+                            "offsetY": 0,
+                            "offsetZ": -1,
+                            "rotationX": -3,
+                            "rotationY": 5,
+                            "rotationZ": -85
+                        },
+                        "LowerArmR": {
+                            "offsetX": 0,
+                            "offsetY": 0,
+                            "offsetZ": 0
+                        },
+                        "ItemAnchorL": {
+                            "offsetX": -1,
+                            "offsetY": 0,
+                            "offsetZ": 0
+                        }
+                    }
+                },
+                {
+                    "frame": 13,
+                    "elements": {
+                        "UpperArmL": {
+                            "rotationX": -3,
+                            "rotationY": 3,
+                            "rotationZ": -90
+                        }
+                    }
+                },
+                {
+                    "frame": 15,
+                    "elements": {
+                        "LowerTorso": {
+                            "rotationX": 0,
+                            "rotationY": 0,
+                            "rotationZ": 0
+                        },
+                        "UpperTorso": {
+                            "offsetX": 0,
+                            "offsetY": 0,
+                            "offsetZ": -0.5,
+                            "rotationX": -5,
+                            "rotationY": -15,
+                            "rotationZ": 0
+                        },
+                        "UpperArmR": {
+                            "offsetX": 1,
+                            "offsetY": -0.5,
+                            "offsetZ": 1.2,
+                            "rotationX": 26,
+                            "rotationY": -45,
+                            "rotationZ": -79
+                        },
+                        "LowerArmR": {
+                            "offsetX": 0,
+                            "offsetY": 1.5,
+                            "offsetZ": -0.2,
+                            "rotationX": -134,
+                            "rotationY": 15,
+                            "rotationZ": -14
+                        },
+                        "Neck": {
+                            "offsetX": 0,
+                            "offsetY": 0,
+                            "offsetZ": -0.2,
+                            "rotationX": 0,
+                            "rotationY": 15,
+                            "rotationZ": 0
+                        },
+                        "Head": {
+                            "rotationX": 0,
+                            "rotationY": 0,
+                            "rotationZ": 0
+                        },
+                        "UpperArmL": {
+                            "offsetX": 2.8,
+                            "offsetY": 0,
+                            "offsetZ": -1,
+                            "rotationX": -3,
+                            "rotationY": 2,
+                            "rotationZ": -97
+                        },
+                        "LowerArmL": {
+                            "rotationX": 0,
+                            "rotationY": 3,
+                            "rotationZ": -5
+                        },
+                        "ItemAnchorL": {
+                            "offsetX": -1,
+                            "offsetY": 0,
+                            "offsetZ": 0,
+                            "rotationX": -9,
+                            "rotationY": 0,
+                            "rotationZ": 4
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "file": "game:shapes/entity/humanoid/seraph-faceless",
+        "op": "add",
+        "path": "/animations/-",
+        "value": {
+            "name": "BowAimCrudeFixed",
+            "code": "bowaimcrudefixed",
+            "quantityframes": 16,
+            "onActivityStopped": "EaseOut",
+            "onAnimationEnd": "Hold",
+            "keyframes": [
+                {
+                    "frame": 0,
+                    "elements": {
+                        "UpperTorso": {
+                            "offsetX": 0,
+                            "offsetY": 0,
+                            "offsetZ": 0,
+                            "rotationX": 0,
+                            "rotationY": 0,
+                            "rotationZ": 0
+                        },
+                        "Neck": {
+                            "offsetX": 0,
+                            "offsetY": 0,
+                            "offsetZ": 0,
+                            "rotationX": 0,
+                            "rotationY": 0,
+                            "rotationZ": 0
+                        },
+                        "Head": {
+                            "rotationX": 0,
+                            "rotationY": 0,
+                            "rotationZ": 8
+                        },
+                        "UpperArmR": {
+                            "offsetX": 0,
+                            "offsetY": 0,
+                            "offsetZ": 0,
+                            "rotationX": 0,
+                            "rotationY": 0,
+                            "rotationZ": 0
+                        },
+                        "LowerArmR": {
+                            "offsetX": 0,
+                            "offsetY": 0,
+                            "offsetZ": 0,
+                            "rotationX": 0,
+                            "rotationY": 0,
+                            "rotationZ": 0
+                        },
+                        "UpperArmL": {
+                            "offsetX": 0,
+                            "offsetY": 0,
+                            "offsetZ": 0,
+                            "rotationX": 0,
+                            "rotationY": 0,
+                            "rotationZ": 0
+                        },
+                        "LowerArmL": {
+                            "offsetX": 0,
+                            "offsetY": 0,
+                            "offsetZ": 0,
+                            "rotationX": 0,
+                            "rotationY": 0,
+                            "rotationZ": 0
+                        },
+                        "ItemAnchorL": {
+                            "offsetX": 0,
+                            "offsetY": 0,
+                            "offsetZ": 0,
+                            "rotationX": 0,
+                            "rotationY": 0,
+                            "rotationZ": 0
+                        }
+                    }
+                },
+                {
+                    "frame": 6,
+                    "elements": {
+                        "UpperArmR": {
+                            "rotationX": 0,
+                            "rotationY": 0,
+                            "rotationZ": -45
+                        }
+                    }
+                },
+                {
+                    "frame": 10,
+                    "elements": {
+                        "UpperArmR": {
+                            "offsetX": 2.3,
+                            "offsetY": 1,
+                            "offsetZ": 3.2,
+                            "rotationX": 10,
+                            "rotationY": -25,
+                            "rotationZ": -90
+                        },
+                        "UpperArmL": {
+                            "offsetX": 2.1,
+                            "offsetY": 0,
+                            "offsetZ": -1,
+                            "rotationX": -28,
+                            "rotationY": 0,
+                            "rotationZ": -76
+                        },
+                        "ItemAnchorL": {
+                            "offsetX": -1,
+                            "offsetY": 0,
+                            "offsetZ": 0
+                        }
+                    }
+                },
+                {
+                    "frame": 13,
+                    "elements": {
+                        "UpperArmL": {
+                            "rotationX": -28,
+                            "rotationY": 2,
+                            "rotationZ": -78
+                        }
+                    }
+                },
+                {
+                    "frame": 15,
+                    "elements": {
+                        "LowerTorso": {
+                            "rotationX": 0,
+                            "rotationY": 0,
+                            "rotationZ": 0
+                        },
+                        "UpperTorso": {
+                            "offsetX": 0,
+                            "offsetY": 0,
+                            "offsetZ": -0.5,
+                            "rotationX": -5,
+                            "rotationY": -20,
+                            "rotationZ": 0
+                        },
+                        "UpperArmR": {
+                            "offsetX": 2.5,
+                            "offsetY": 1.6,
+                            "offsetZ": 1.8,
+                            "rotationX": 9,
+                            "rotationY": -53,
+                            "rotationZ": -100
+                        },
+                        "LowerArmR": {
+                            "offsetX": 0,
+                            "offsetY": 0,
+                            "offsetZ": -0.2,
+                            "rotationX": -126,
+                            "rotationY": 0,
+                            "rotationZ": 0
+                        },
+                        "Neck": {
+                            "offsetX": 0,
+                            "offsetY": 0,
+                            "offsetZ": -0.2,
+                            "rotationX": 0,
+                            "rotationY": 15,
+                            "rotationZ": 0
+                        },
+                        "Head": {
+                            "rotationX": 0,
+                            "rotationY": 2,
+                            "rotationZ": 0
+                        },
+                        "UpperArmL": {
+                            "offsetX": 2.8,
+                            "offsetY": 0,
+                            "offsetZ": -1.5,
+                            "rotationX": -28,
+                            "rotationY": 5,
+                            "rotationZ": -79
+                        },
+                        "LowerArmL": {
+                            "rotationX": 0,
+                            "rotationY": 3,
+                            "rotationZ": -5
+                        },
+                        "ItemAnchorL": {
+                            "offsetX": -1,
+                            "offsetY": 0,
+                            "offsetZ": 0,
+                            "rotationX": -1,
+                            "rotationY": 0,
+                            "rotationZ": -6
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "file": "game:shapes/entity/humanoid/seraph-faceless",
+        "op": "add",
+        "path": "/animations/-",
+        "value": {
+            "name": "BowAimLongFixed",
+            "code": "bowaimlongfixed",
+            "quantityframes": 16,
+            "onActivityStopped": "EaseOut",
+            "onAnimationEnd": "Hold",
+            "keyframes": [
+                {
+                    "frame": 0,
+                    "elements": {
+                        "LowerTorso": {
+                            "rotationX": 0,
+                            "rotationY": 0,
+                            "rotationZ": 0
+                        },
+                        "UpperTorso": {
+                            "offsetX": 0,
+                            "offsetY": 0,
+                            "offsetZ": 0,
+                            "rotationX": 0,
+                            "rotationY": 0,
+                            "rotationZ": 0
+                        },
+                        "Neck": {
+                            "offsetX": 0,
+                            "offsetY": 0,
+                            "offsetZ": 0,
+                            "rotationX": 0,
+                            "rotationY": 0,
+                            "rotationZ": 0
+                        },
+                        "Head": {
+                            "rotationX": 0,
+                            "rotationY": 0,
+                            "rotationZ": 8
+                        },
+                        "UpperArmR": {
+                            "offsetX": 0,
+                            "offsetY": 0,
+                            "offsetZ": 0,
+                            "rotationX": 0,
+                            "rotationY": 0,
+                            "rotationZ": 0
+                        },
+                        "LowerArmR": {
+                            "offsetX": 0,
+                            "offsetY": 0,
+                            "offsetZ": 0,
+                            "rotationX": 0,
+                            "rotationY": 0,
+                            "rotationZ": 0
+                        },
+                        "UpperArmL": {
+                            "offsetX": 1,
+                            "offsetY": -1,
+                            "offsetZ": 0,
+                            "rotationX": 0,
+                            "rotationY": 0,
+                            "rotationZ": 0
+                        },
+                        "LowerArmL": {
+                            "offsetX": 0,
+                            "offsetY": 0,
+                            "offsetZ": 0,
+                            "rotationX": 0,
+                            "rotationY": 0,
+                            "rotationZ": 0
+                        },
+                        "UpperFootR": {
+                            "rotationX": 0,
+                            "rotationY": 0,
+                            "rotationZ": 0
+                        },
+                        "UpperFootL": {
+                            "rotationX": 0,
+                            "rotationY": 0,
+                            "rotationZ": 0
+                        },
+                        "ItemAnchorL": {
+                            "offsetX": 0,
+                            "offsetY": 0,
+                            "offsetZ": 0,
+                            "rotationX": 0,
+                            "rotationY": 0,
+                            "rotationZ": 0
+                        }
+                    }
+                },
+                {
+                    "frame": 6,
+                    "elements": {
+                        "UpperArmR": {
+                            "rotationX": 0,
+                            "rotationY": 0,
+                            "rotationZ": -45
+                        }
+                    }
+                },
+                {
+                    "frame": 10,
+                    "elements": {
+                        "UpperArmR": {
+                            "offsetX": 1,
+                            "offsetY": 0,
+                            "offsetZ": 1,
+                            "rotationX": 10,
+                            "rotationY": -30,
+                            "rotationZ": -90
+                        },
+                        "UpperArmL": {
+                            "offsetX": 2.2,
+                            "offsetY": -0.5,
+                            "offsetZ": -1,
+                            "rotationX": -3,
+                            "rotationY": 14,
+                            "rotationZ": -75
+                        },
+                        "ItemAnchorL": {
+                            "offsetX": -1,
+                            "offsetY": 0,
+                            "offsetZ": 0
+                        }
+                    }
+                },
+                {
+                    "frame": 13,
+                    "elements": {
+                        "UpperArmL": {
+                            "rotationX": -3,
+                            "rotationY": 17,
+                            "rotationZ": -81
+                        }
+                    }
+                },
+                {
+                    "frame": 15,
+                    "elements": {
+                        "LowerTorso": {
+                            "rotationX": 0,
+                            "rotationY": -28,
+                            "rotationZ": 0
+                        },
+                        "UpperTorso": {
+                            "offsetX": 0,
+                            "offsetY": 0,
+                            "offsetZ": -0.5,
+                            "rotationX": -5,
+                            "rotationY": -20,
+                            "rotationZ": 0
+                        },
+                        "UpperArmR": {
+                            "offsetX": 1,
+                            "offsetY": 0.4,
+                            "offsetZ": 1,
+                            "rotationX": 23,
+                            "rotationY": -98.5,
+                            "rotationZ": -88
+                        },
+                        "LowerArmR": {
+                            "offsetX": 0,
+                            "offsetY": 0,
+                            "offsetZ": -0.2,
+                            "rotationX": -142,
+                            "rotationY": 0,
+                            "rotationZ": 0
+                        },
+                        "Neck": {
+                            "offsetX": 0,
+                            "offsetY": 0,
+                            "offsetZ": -0.2,
+                            "rotationX": 0,
+                            "rotationY": 15,
+                            "rotationZ": 0
+                        },
+                        "Head": {
+                            "rotationX": 0,
+                            "rotationY": 5,
+                            "rotationZ": 0
+                        },
+                        "UpperArmL": {
+                            "offsetX": 2.9,
+                            "offsetY": 0,
+                            "offsetZ": -1,
+                            "rotationX": -3,
+                            "rotationY": 26,
+                            "rotationZ": -97
+                        },
+                        "LowerArmL": {
+                            "rotationX": 0,
+                            "rotationY": 3,
+                            "rotationZ": -5
+                        },
+                        "UpperFootR": {
+                            "rotationX": 2,
+                            "rotationY": -1,
+                            "rotationZ": 4
+                        },
+                        "UpperFootL": {
+                            "rotationX": -1,
+                            "rotationY": 28,
+                            "rotationZ": 0
+                        },
+                        "ItemAnchorL": {
+                            "offsetX": -1,
+                            "offsetY": 0,
+                            "offsetZ": 0,
+                            "rotationX": -20,
+                            "rotationY": 10,
+                            "rotationZ": 5
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "file": "game:shapes/entity/humanoid/seraph-faceless",
+        "op": "add",
+        "path": "/animations/-",
+        "value": {
+            "name": "BowAimRecurveFixed",
+            "code": "bowaimrecurvefixed",
+            "quantityframes": 16,
+            "onActivityStopped": "EaseOut",
+            "onAnimationEnd": "Hold",
+            "keyframes": [
+                {
+                    "frame": 0,
+                    "elements": {
+                        "UpperTorso": {
+                            "offsetX": 0,
+                            "offsetY": 0,
+                            "offsetZ": 0,
+                            "rotationX": 0,
+                            "rotationY": 0,
+                            "rotationZ": 0
+                        },
+                        "Neck": {
+                            "offsetX": 0,
+                            "offsetY": 0,
+                            "offsetZ": 0,
+                            "rotationX": 0,
+                            "rotationY": 0,
+                            "rotationZ": 0
+                        },
+                        "Head": {
+                            "rotationX": 0,
+                            "rotationY": 0,
+                            "rotationZ": 8
+                        },
+                        "UpperArmR": {
+                            "offsetX": 0,
+                            "offsetY": 0,
+                            "offsetZ": 0,
+                            "rotationX": 0,
+                            "rotationY": 0,
+                            "rotationZ": 0
+                        },
+                        "LowerArmR": {
+                            "offsetX": 0,
+                            "offsetY": 0,
+                            "offsetZ": 0,
+                            "rotationX": 0,
+                            "rotationY": 0,
+                            "rotationZ": 0
+                        },
+                        "UpperArmL": {
+                            "offsetX": 0,
+                            "offsetY": 0,
+                            "offsetZ": 0,
+                            "rotationX": 0,
+                            "rotationY": 0,
+                            "rotationZ": 0
+                        },
+                        "LowerArmL": {
+                            "offsetX": 0,
+                            "offsetY": 0,
+                            "offsetZ": 0,
+                            "rotationX": 0,
+                            "rotationY": 0,
+                            "rotationZ": 0
+                        },
+                        "ItemAnchorL": {
+                            "offsetX": 0,
+                            "offsetY": 0,
+                            "offsetZ": 0,
+                            "rotationX": 0,
+                            "rotationY": 0,
+                            "rotationZ": 0
+                        }
+                    }
+                },
+                {
+                    "frame": 6,
+                    "elements": {
+                        "UpperArmR": {
+                            "rotationX": -5,
+                            "rotationY": -11,
+                            "rotationZ": -45
+                        }
+                    }
+                },
+                {
+                    "frame": 10,
+                    "elements": {
+                        "UpperArmR": {
+                            "offsetX": 1,
+                            "offsetY": 0,
+                            "offsetZ": 3,
+                            "rotationX": 10,
+                            "rotationY": -31,
+                            "rotationZ": -90
+                        },
+                        "UpperArmL": {
+                            "offsetX": 0.8,
+                            "offsetY": 0,
+                            "offsetZ": -1,
+                            "rotationX": -3,
+                            "rotationY": 5,
+                            "rotationZ": -85
+                        },
+                        "ItemAnchorL": {
+                            "offsetX": -1,
+                            "offsetY": 0,
+                            "offsetZ": 0
+                        }
+                    }
+                },
+                {
+                    "frame": 13,
+                    "elements": {
+                        "UpperArmL": {
+                            "rotationX": -3,
+                            "rotationY": 5,
+                            "rotationZ": -90
+                        }
+                    }
+                },
+                {
+                    "frame": 15,
+                    "elements": {
+                        "LowerTorso": {
+                            "rotationX": 0,
+                            "rotationY": 0,
+                            "rotationZ": 0
+                        },
+                        "UpperTorso": {
+                            "offsetX": 0,
+                            "offsetY": 0,
+                            "offsetZ": -0.5,
+                            "rotationX": -5,
+                            "rotationY": -15,
+                            "rotationZ": 0
+                        },
+                        "UpperArmR": {
+                            "offsetX": 1,
+                            "offsetY": 0.1,
+                            "offsetZ": 1.3,
+                            "rotationX": 12,
+                            "rotationY": -71.5,
+                            "rotationZ": -91
+                        },
+                        "LowerArmR": {
+                            "offsetX": 0,
+                            "offsetY": 0.3,
+                            "offsetZ": -0.2,
+                            "rotationX": -135,
+                            "rotationY": 0,
+                            "rotationZ": -4
+                        },
+                        "Neck": {
+                            "offsetX": 0,
+                            "offsetY": 0,
+                            "offsetZ": -0.2,
+                            "rotationX": 0,
+                            "rotationY": 15,
+                            "rotationZ": 0
+                        },
+                        "Head": {
+                            "rotationX": 0,
+                            "rotationY": 0,
+                            "rotationZ": 0
+                        },
+                        "UpperArmL": {
+                            "offsetX": 2.8,
+                            "offsetY": 0,
+                            "offsetZ": -1,
+                            "rotationX": -3,
+                            "rotationY": 5,
+                            "rotationZ": -97
+                        },
+                        "LowerArmL": {
+                            "rotationX": 0,
+                            "rotationY": 3,
+                            "rotationZ": -5
+                        },
+                        "ItemAnchorL": {
+                            "offsetX": -1.5,
+                            "offsetY": 0,
+                            "offsetZ": 0,
+                            "rotationX": -7,
+                            "rotationY": 0,
+                            "rotationZ": 0
+                        }
+                    }
+                }
+            ]
+        }
+    }
+]

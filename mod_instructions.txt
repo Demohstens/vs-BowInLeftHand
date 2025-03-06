@@ -1,0 +1,13 @@
+The goal of this mod is to make it so that the seraph holds the bow in the left hand and pulls the arrow back with the right hand. Combat Overhaul does this, but this mod is for people who specifically do not want to use Combat Overhaul. I completed the animations and did all the research needed to finish the mod, but I just can't be bothered to actually do it.
+
+How to finish this mod:
+- Currently the mod overwrites the animations for all four vanilla bows so that the actions of left and right hand are swapped.
+- These animations were generated with a script that's included in this zip file. I don't care who uses the script, it's not licensed.
+- You have to write a harmony script that overwrites code in a specific vanilla method so that it changes the hand.
+- The entry point is this method: https://github.com/anegostudios/vsessentialsmod/blob/e70ab0ed0c958cad4ce89e626df3dff762b612ae/EntityRenderer/EntityShapeRenderer.cs#L434
+- You can use the itemstack object to tell if the item is a bow. Maybe add an extra element to the bow json file that tells it to lefthand override.
+- The code you add does this logic: if itemstack has attribute lefthand override, change the bool right to false.
+- Because you're adding this code to the middle of the method, you gotta use HarmonyLib's transpiler mode, which requires you to write the code you want to insert in CIL assembly language (that is, C#'s intermediate assembly language). More info on this here: https://harmony.pardeike.net/articles/patching-transpiler.html
+- I've also included a dump of the method you're editing. I used dnSpy to get the dump. The part of the code you're adding to should be IL_0043, although I could be wrong.
+
+Good luck!
