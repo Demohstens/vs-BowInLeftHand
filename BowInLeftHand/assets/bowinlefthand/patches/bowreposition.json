@@ -2,21 +2,21 @@
   {
     "op": "replace",
     "path": "/tpHandTransformByType/*/rotation/x",
-    "value": 70,
+    "value": 75,
     "file": "game:itemtypes/tool/bow.json",
     "side": "Server"
   },
   {
     "op": "replace",
     "path": "/tpHandTransformByType/*/rotation/y",
-    "value": 15,
+    "value": 14,
     "file": "game:itemtypes/tool/bow.json",
     "side": "Server"
   },
   {
     "op": "replace",
     "path": "/tpHandTransformByType/*/rotation/z",
-    "value": 23,
+    "value": 18,
     "file": "game:itemtypes/tool/bow.json",
     "side": "Server"
   },
@@ -30,14 +30,14 @@
   {
     "op": "replace",
     "path": "/tpHandTransformByType/bow-long/rotation/y",
-    "value": 6,
+    "value": 13,
     "file": "game:itemtypes/tool/bow.json",
     "side": "Server"
   },
   {
     "op": "replace",
     "path": "/tpHandTransformByType/bow-long/rotation/z",
-    "value": -5,
+    "value": -9,
     "file": "game:itemtypes/tool/bow.json",
     "side": "Server"
   },
