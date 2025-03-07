@@ -11,7 +11,7 @@ using Vintagestory.GameContent;
 
 public class CorrectlyHandedBowModSystem : ModSystem
 {
-    private static ItemStack tempOffhandItem; // Change to static
+    private static ItemStack tempOffhandItem;
 
     // Called only on the client side
     public override void StartClientSide(ICoreClientAPI api)
@@ -40,6 +40,7 @@ public class CorrectlyHandedBowModSystem : ModSystem
             {
                 if (esr.capi.World.Player.Entity?.LeftHandItemSlot?.Itemstack != null)
                 {
+                    // Store the offhand item 
                     tempOffhandItem = esr.capi.World.Player.Entity.LeftHandItemSlot.Itemstack.Clone();
                     // Empty offhand slot
                     esr.capi.World.Player.Entity.LeftHandItemSlot.TakeOutWhole();
@@ -54,7 +55,7 @@ public class CorrectlyHandedBowModSystem : ModSystem
                     {
                         return isBow;
                     }
-
+                    // Set the stored Offhand item to the player's offhand slot
                     esr.capi.World.Player.Entity.LeftHandItemSlot.Itemstack = tempOffhandItem;
                 }
                 tempOffhandItem = null;
