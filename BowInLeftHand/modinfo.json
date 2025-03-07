@@ -4,10 +4,12 @@
     "name": "BowInLeftHand",
     "authors": [
         "Orangutanion",
-        "Demohstens"
+        "Demohstens",
+        "Shrewbloom",
+        "Rodo"
     ],
     "description": "Moves bow to left hand because the player is right handed",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "dependencies": {
         "game": ""
     }

@@ -1,0 +1,121 @@
+[
+  {
+    "op": "replace",
+    "path": "/tpHandTransformByType/*/rotation/x",
+    "value": 70,
+    "file": "game:itemtypes/tool/bow.json",
+    "side": "Server"
+  },
+  {
+    "op": "replace",
+    "path": "/tpHandTransformByType/*/rotation/y",
+    "value": 15,
+    "file": "game:itemtypes/tool/bow.json",
+    "side": "Server"
+  },
+  {
+    "op": "replace",
+    "path": "/tpHandTransformByType/*/rotation/z",
+    "value": 23,
+    "file": "game:itemtypes/tool/bow.json",
+    "side": "Server"
+  },
+  {
+    "op": "replace",
+    "path": "/tpHandTransformByType/bow-long/rotation/x",
+    "value": 78,
+    "file": "game:itemtypes/tool/bow.json",
+    "side": "Server"
+  },
+  {
+    "op": "replace",
+    "path": "/tpHandTransformByType/bow-long/rotation/y",
+    "value": 6,
+    "file": "game:itemtypes/tool/bow.json",
+    "side": "Server"
+  },
+  {
+    "op": "replace",
+    "path": "/tpHandTransformByType/bow-long/rotation/z",
+    "value": -5,
+    "file": "game:itemtypes/tool/bow.json",
+    "side": "Server"
+  },
+  {
+    "op": "replace",
+    "path": "/tpHandTransformByType/bow-long/translation/z",
+    "value": -0.3899,
+    "file": "game:itemtypes/tool/bow.json",
+    "side": "Server"
+  },
+  {
+    "op": "replace",
+    "path": "/tpHandTransformByType/bow-recurve/rotation/x",
+    "value": 71,
+    "file": "game:itemtypes/tool/bow.json",
+    "side": "Server"
+  },
+  {
+    "op": "replace",
+    "path": "/tpHandTransformByType/bow-recurve/rotation/y",
+    "value": 8,
+    "file": "game:itemtypes/tool/bow.json",
+    "side": "Server"
+  },
+  {
+    "op": "replace",
+    "path": "/tpHandTransformByType/bow-recurve/rotation/z",
+    "value": 4,
+    "file": "game:itemtypes/tool/bow.json",
+    "side": "Server"
+  },
+  {
+    "op": "replace",
+    "path": "/tpHandTransformByType/bow-recurve/translation/z",
+    "value": -0.55,
+    "file": "game:itemtypes/tool/bow.json",
+    "side": "Server"
+  },
+  {
+    "op": "replace",
+    "path": "/tpHandTransformByType/bow-simple/rotation/x",
+    "value": 76,
+    "file": "game:itemtypes/tool/bow.json",
+    "side": "Server"
+  },
+  {
+    "op": "replace",
+    "path": "/tpHandTransformByType/bow-simple/rotation/y",
+    "value": 9,
+    "file": "game:itemtypes/tool/bow.json",
+    "side": "Server"
+  },
+  {
+    "op": "replace",
+    "path": "/tpHandTransformByType/bow-simple/rotation/z",
+    "value": 4,
+    "file": "game:itemtypes/tool/bow.json",
+    "side": "Server"
+  },
+  {
+    "op": "replace",
+    "path": "/tpHandTransformByType/bow-simple/translation/x",
+    "value": -0.48,
+    "file": "game:itemtypes/tool/bow.json",
+    "side": "Server"
+  },
+  {
+    "op": "replace",
+    "path": "/tpHandTransformByType/bow-simple/translation/y",
+    "value": 0.03,
+    "file": "game:itemtypes/tool/bow.json",
+    "side": "Server"
+  },
+  {
+    "op": "replace",
+    "path": "/tpHandTransformByType/bow-simple/translation/z",
+    "value": -0.46,
+    "file": "game:itemtypes/tool/bow.json",
+    "side": "Server"
+  }
+]
