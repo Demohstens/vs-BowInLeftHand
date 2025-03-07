@@ -11,14 +11,14 @@ using Vintagestory.GameContent;
 
 public class CorrectlyHandedBowModSystem : ModSystem
 {
-    private ICoreClientAPI capi;
+    private static ItemStack tempOffhandItem; // Change to static
+
     // Called only on the client side
     public override void StartClientSide(ICoreClientAPI api)
     {
         base.StartClientSide(api); // Call base method.
-        capi = api; // No cast needed!  api is guaranteed to be ICoreClientAPI.
 
-        var harmony = new Harmony("com.correctedBowHand.vsmod");
+        var harmony = new Harmony("com.BowInleftHand.vsmod");
         try
         {
             harmony.PatchAll(Assembly.GetExecutingAssembly());
@@ -35,11 +35,36 @@ public class CorrectlyHandedBowModSystem : ModSystem
     {
         if (esr?.capi?.World?.Player?.InventoryManager.ActiveHotbarSlot?.Itemstack != null)
         {
-            return esr.capi.World.Player.InventoryManager.ActiveHotbarSlot.Itemstack.GetName().ToLower().Contains("bow");
+            var isBow = esr.capi.World.Player.InventoryManager.ActiveHotbarSlot.Itemstack.GetName().ToLower().Contains("bow");
+            if (isBow)
+            {
+                if (esr.capi.World.Player.Entity?.LeftHandItemSlot?.Itemstack != null)
+                {
+                    tempOffhandItem = esr.capi.World.Player.Entity.LeftHandItemSlot.Itemstack.Clone();
+                    // Empty offhand slot
+                    esr.capi.World.Player.Entity.LeftHandItemSlot.TakeOutWhole();
+                }
+                // BIG PROBLEM
+            }
+            else
+            {
+                if (esr.capi.World.Player.Entity?.LeftHandItemSlot != null)
+                {
+                    if (tempOffhandItem == null)
+                    {
+                        return isBow;
+                    }
+
+                    esr.capi.World.Player.Entity.LeftHandItemSlot.Itemstack = tempOffhandItem;
+                }
+                tempOffhandItem = null;
+
+            }
+            return isBow;
         }
+
         return false;
     }
-
 
     [HarmonyPatch(typeof(EntityShapeRenderer), "RenderHeldItem")]
     public class PatchRenderHeldItem
