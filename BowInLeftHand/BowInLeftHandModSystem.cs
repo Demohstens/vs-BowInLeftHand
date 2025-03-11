@@ -11,12 +11,38 @@ using Vintagestory.GameContent;
 
 public class CorrectlyHandedBowModSystem : ModSystem
 {
-    private static ItemStack tempOffhandItem;
 
+    private ICoreAPI api;
+    //private const int LogIntervalMs = 5000; // Log every 5 seconds
+
+
+    public override void Start(ICoreAPI api)
+    {
+        this.api = api;
+        //api.Event.RegisterGameTickListener(LogAnimations, LogIntervalMs);
+    }
+
+    private void LogAnimations(float dt)
+    {
+        Console.WriteLine("LogAnimations running...");
+
+        if (api.World?.AllPlayers == null || api.World.AllPlayers.Length == 0)
+        {
+            return;
+        }
+
+        var player = api.World.AllPlayers[0];
+        if (player?.Entity?.AnimManager == null)
+        {
+            return;
+        }
+
+        var curAnims = player.Entity.AnimManager.ActiveAnimationsByAnimCode;
+        Console.WriteLine($"Active Animations: {string.Join(", ", curAnims.Keys)}");
+    }
     // Called only on the client side
     public override void StartClientSide(ICoreClientAPI api)
     {
-        base.StartClientSide(api); // Call base method.
 
         var harmony = new Harmony("com.BowInleftHand.vsmod");
         try
@@ -36,35 +62,30 @@ public class CorrectlyHandedBowModSystem : ModSystem
         if (esr?.capi?.World?.Player?.InventoryManager.ActiveHotbarSlot?.Itemstack != null)
         {
             var isBow = esr.capi.World.Player.InventoryManager.ActiveHotbarSlot.Itemstack.GetName().ToLower().Contains("bow");
-            if (isBow)
-            {
-                if (esr.capi.World.Player.Entity?.LeftHandItemSlot?.Itemstack != null)
+            if (isBow) {
+
+                var anim = esr.capi.World.Player.Entity.Properties.Client.AnimationsByMetaCode["holdinglanternlefthand"];
+                if (anim != null)
                 {
-                    // Store the offhand item 
-                    tempOffhandItem = esr.capi.World.Player.Entity.LeftHandItemSlot.Itemstack.Clone();
-                    // Empty offhand slot
-                    esr.capi.World.Player.Entity.LeftHandItemSlot.TakeOutWhole();
+                    anim.Weight = 0;
+                    anim.BlendMode = EnumAnimationBlendMode.Add;
                 }
-                // BIG PROBLEM
-            }
-            else
-            {
-                if (esr.capi.World.Player.Entity?.LeftHandItemSlot != null)
+                esr.capi.World.Player.Entity.Properties.Client.AnimationsByMetaCode["holdinglanternlefthand-fp"] = anim;
+
+                var animFP = esr.capi.World.Player.Entity.Properties.Client.AnimationsByMetaCode["holdinglanternlefthand"];
+                if (animFP != null)
                 {
-                    if (tempOffhandItem == null)
-                    {
-                        return isBow;
-                    }
-                    // Set the stored Offhand item to the player's offhand slot
-                    esr.capi.World.Player.Entity.LeftHandItemSlot.Itemstack = tempOffhandItem;
+                    animFP.Weight = 0;
+                    animFP.BlendMode = EnumAnimationBlendMode.Add;
                 }
-                tempOffhandItem = null;
+                esr.capi.World.Player.Entity.Properties.Client.AnimationsByMetaCode["holdinglanternlefthand-fp"] = animFP;
+                
+                return isBow;
 
             }
-            return isBow;
         }
-
         return false;
+
     }
 
     [HarmonyPatch(typeof(EntityShapeRenderer), "RenderHeldItem")]
