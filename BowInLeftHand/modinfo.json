@@ -1,7 +1,7 @@
 {
     "type": "code",
     "modid": "bowinlefthand",
-    "name": "BowInLeftHand",
+    "name": "Corrected Bow Animation",
     "authors": [
         "Orangutanion",
         "Demohstens",
@@ -9,7 +9,7 @@
         "Rodo"
     ],
     "description": "Moves bow to left hand because the player is right handed",
-    "version": "0.4.0",
+    "version": "1.0.0",
     "dependencies": {
         "game": ""
     }
