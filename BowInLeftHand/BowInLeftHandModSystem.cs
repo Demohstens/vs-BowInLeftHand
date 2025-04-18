@@ -3,43 +3,23 @@ using System;
 using System.Collections.Generic;
 using System.Reflection;
 using System.Reflection.Emit;
-using Vintagestory;
 using Vintagestory.API.Client;
 using Vintagestory.API.Common;
-using Vintagestory.API.Common.Entities;
+using Vintagestory.API.Util;
 using Vintagestory.GameContent;
 
 public class CorrectlyHandedBowModSystem : ModSystem
 {
 
     private ICoreAPI api;
-    //private const int LogIntervalMs = 5000; // Log every 5 seconds
 
 
     public override void Start(ICoreAPI api)
     {
         this.api = api;
-        //api.Event.RegisterGameTickListener(LogAnimations, LogIntervalMs);
     }
 
-    private void LogAnimations(float dt)
-    {
-        Console.WriteLine("LogAnimations running...");
-
-        if (api.World?.AllPlayers == null || api.World.AllPlayers.Length == 0)
-        {
-            return;
-        }
-
-        var player = api.World.AllPlayers[0];
-        if (player?.Entity?.AnimManager == null)
-        {
-            return;
-        }
-
-        var curAnims = player.Entity.AnimManager.ActiveAnimationsByAnimCode;
-        Console.WriteLine($"Active Animations: {string.Join(", ", curAnims.Keys)}");
-    }
+    
     // Called only on the client side
     public override void StartClientSide(ICoreClientAPI api)
     {
@@ -52,45 +32,81 @@ public class CorrectlyHandedBowModSystem : ModSystem
         }
         catch (Exception ex)
         {
+            throw (ex);
             Console.WriteLine($"Harmony PatchAll failed: {ex}");
         }
+
+
+        // Fix for CS1593: Delegate 'StartAnimationDelegate' does not take 1 arguments
+        api.Event.PlayerJoin += (player) =>
+        {
+            var animManager = api?.World?.Player?.Entity?.AnimManager;
+            animManager.OnStartAnimation += (ref AnimationMetaData animMeta, ref EnumHandling handling) =>
+        {
+            if (animMeta?.Code == "holdinglanternlefthand" || animMeta?.Code == "holdinglanternlefthand-fp")
+            {
+                var item = api.World.Player.InventoryManager.ActiveHotbarSlot?.Itemstack?.Item;
+                if (item is ItemBow)
+                {
+                    // Optionally stop the animation immediately  
+                    animManager.StopAnimation(animMeta.Code);
+                    api.Logger.Notification($"Blocked offhand animation '{animMeta.Code}' because bow is held.");
+                    handling = EnumHandling.PreventDefault;
+                    return false;
+                }
+            }
+
+            handling = EnumHandling.PassThrough;
+            return true;
+        };
+
+        };
     }
+
+    private static AnimationMetaData storedLanternAnim = null;
+    private static bool lanternAnimRemoved = false;
 
     // This method checks if the bow is in the right hand
     public static bool IsBowInRightHand(EntityShapeRenderer esr)
     {
         if (esr?.capi?.World?.Player?.InventoryManager.ActiveHotbarSlot?.Itemstack != null)
         {
-            var isBow = esr.capi.World.Player.InventoryManager.ActiveHotbarSlot.Itemstack.GetName().ToLower().Contains("bow");
+            var isBow = esr.capi.World.Player.InventoryManager.ActiveHotbarSlot.Itemstack.Item is ItemBow;
             if (isBow) {
 
-                var anim = esr.capi.World.Player.Entity.Properties.Client.AnimationsByMetaCode["holdinglanternlefthand"];
-                if (anim != null)
-                {
-                    anim.Weight = 0;
-                    anim.BlendMode = EnumAnimationBlendMode.Add;
-                }
-                esr.capi.World.Player.Entity.Properties.Client.AnimationsByMetaCode["holdinglanternlefthand-fp"] = anim;
+                var holdinglanternlefthand = esr.capi.World.Player.Entity.Properties.Client.AnimationsByMetaCode["holdinglanternlefthand"];
 
-                var animFP = esr.capi.World.Player.Entity.Properties.Client.AnimationsByMetaCode["holdinglanternlefthand"];
-                if (animFP != null)
+                var player = esr?.capi?.World?.Player;
+
+                if (holdinglanternlefthand != null)
                 {
-                    animFP.Weight = 0;
-                    animFP.BlendMode = EnumAnimationBlendMode.Add;
+                    var anims = player.Entity.Properties.Client.Animations;
+                    var animsByMeta = player.Entity.Properties.Client.AnimationsByMetaCode;
+
+                    if (!lanternAnimRemoved && animsByMeta.TryGetValue("holdinglanternlefthand", out var anim))
+                    {
+                        if (anim != null) { 
+                        storedLanternAnim = anim;
+                        anims.Remove(anim);
+                        //animsByMeta.Remove(anim);
+                        lanternAnimRemoved = true; }
+                    }
                 }
-                esr.capi.World.Player.Entity.Properties.Client.AnimationsByMetaCode["holdinglanternlefthand-fp"] = animFP;
-                
-                return isBow;
+
+
+                return true;
 
             }
         }
         return false;
 
     }
-
+  
     [HarmonyPatch(typeof(EntityShapeRenderer), "RenderHeldItem")]
     public class PatchRenderHeldItem
     {
+
+    
 
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions, ILGenerator il)
@@ -101,17 +117,11 @@ public class CorrectlyHandedBowModSystem : ModSystem
 
             if (isBowMethod == null)
             {
-                Console.WriteLine("ERROR: Could not find method 'IsBowInRightHand'.");
-                return codes;
+                 return codes;
             }
 
 
             int ldarg3c = 0;
-            Console.WriteLine("ORIGINAL");
-            for (int i = 0; i < codes.Count; i++)
-            {
-                Console.WriteLine($"Code {i}: {codes[i]}");
-            }
             // Iterate through the instructions and look for 'Ldarg_3' to modify the hand
             for (int i = 0; i < codes.Count; i++)
             {
@@ -166,18 +176,11 @@ public class CorrectlyHandedBowModSystem : ModSystem
                             loadBowHandValue,
                             skipOriginalLoad
                         });
-
-                        // We're done
                         break;
 
                     }
 
                 }
-            }
-            Console.WriteLine("DONE WRITING TRANSPILER");
-            for (int i = 0; i < codes.Count; i++)
-            {
-                Console.WriteLine($"Code {i}: {codes[i]}");
             }
 
             return codes;
